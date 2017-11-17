@@ -17,5 +17,7 @@ public interface ListProductsContract {
 
     interface Presenter extends BasePresenter {
         void loadProducts();
+
+        void addRandomProduct();
     }
 }
