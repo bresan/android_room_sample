@@ -1,5 +1,6 @@
 package com.rodrigobresan.roomexample.mobile.injection.module;
 
+import com.rodrigobresan.roomexample.mobile.add_product.AddProductActivity;
 import com.rodrigobresan.roomexample.mobile.injection.scope.PerActivity;
 import com.rodrigobresan.roomexample.mobile.list_products.view.ListProductsActivity;
 
@@ -12,4 +13,8 @@ public abstract class ActivityBindingModule {
     @PerActivity
     @ContributesAndroidInjector(modules = ListProductsModule.class)
     abstract ListProductsActivity bindProductsActivity();
+
+    @PerActivity
+    @ContributesAndroidInjector(modules = AddProductModule.class)
+    abstract AddProductActivity bindAddProductActivity();
 }

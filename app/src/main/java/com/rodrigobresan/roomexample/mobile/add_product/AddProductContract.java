@@ -1,21 +1,20 @@
-package com.rodrigobresan.roomexample.mobile.list_products;
+package com.rodrigobresan.roomexample.mobile.add_product;
 
 import com.rodrigobresan.roomexample.base.BasePresenter;
 import com.rodrigobresan.roomexample.base.BaseView;
 import com.rodrigobresan.roomexample.mobile.list_products.model.Product;
 
-import java.util.List;
+public interface AddProductContract {
 
-public interface ListProductsContract {
     interface View extends BaseView<Presenter> {
-        void showProducts(List<Product> productList);
+        void showSuccess();
 
-        void showEmptyView();
-
-        void showNoConnectionView();
+        void showFailure();
     }
 
     interface Presenter extends BasePresenter {
-        void loadProducts();
+        void validateFields();
+
+        void saveProduct(Product product);
     }
 }

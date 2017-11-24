@@ -36,12 +36,6 @@ public class ListProductsPresenter implements ListProductsContract.Presenter {
     }
 
     @Override
-    public void addRandomProduct() {
-        productDao.insert(new Product(new Random().nextLong(), "Random product", "Description", 10));
-        loadProducts();
-    }
-
-    @Override
     public void start() {
 
     }

@@ -1,6 +1,7 @@
 package com.rodrigobresan.roomexample.mobile.list_products.view;
 
 import android.arch.persistence.room.Room;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.rodrigobresan.roomexample.R;
+import com.rodrigobresan.roomexample.mobile.add_product.AddProductActivity;
 import com.rodrigobresan.roomexample.mobile.list_products.ListProductsContract;
 import com.rodrigobresan.roomexample.mobile.list_products.model.AppDatabase;
 import com.rodrigobresan.roomexample.mobile.list_products.model.Product;
@@ -59,7 +61,7 @@ public class ListProductsActivity extends AppCompatActivity implements ListProdu
         fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                presenter.addRandomProduct();
+                startActivity(new Intent(ListProductsActivity.this, AddProductActivity.class));
             }
         });
     }
@@ -91,10 +93,6 @@ public class ListProductsActivity extends AppCompatActivity implements ListProdu
     @Override
     public void showProducts(List<Product> productList) {
         productAdapter.setProductList(productList);
-
-        for (Product product : productList) {
-            Log.d("LOG", "current product: " + product.getName());
-        }
     }
 
 
@@ -105,11 +103,6 @@ public class ListProductsActivity extends AppCompatActivity implements ListProdu
 
     @Override
     public void showNoConnectionView() {
-
-    }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
 

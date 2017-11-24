@@ -6,10 +6,10 @@ import dagger.Subcomponent;
 import dagger.android.AndroidInjector;
 
 @Subcomponent
-public interface ProductsComponent extends AndroidInjector<ListProductsActivity> {
+public interface ListProductsComponent extends AndroidInjector<ListProductsActivity> {
 
     @Subcomponent.Builder
     abstract class Builder extends AndroidInjector.Builder<ListProductsActivity> {
-
     }
+
 }
